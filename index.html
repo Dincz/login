@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Free Web tutorials" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fbfbfb;
+        margin-top: 25vh;
+        display: grid;
+        place-items: center;
+        height: 60vh;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-image: url(image/bgimg.jpg);
+        object-fit: cover;
+      }
+      .container {
+        top: 30%;
+        width: 500px;
+        max-width: 90%;
+      }
+      .container form {
+        width: 88%;
+        height: 100%;
+        padding: 20px;
+        background: white;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+      .container form h3 {
+        text-align: center;
+        margin-bottom: 24px;
+        color: rgb(21, 85, 6);
+      }
+      .container form button {
+        text-align: center;
+        background-color: #73ccec;
+        width: 50%;
+        height: 70%;
+      }
+      .cont1 {
+        padding: 10px;
+        margin: 10px;
+        background-color: #fff;
+        display: grid;
+        place-content: center;
+        border-radius: 10px;
+        width: 20%;
+      }
+      .register {
+        background-color: rgb(3, 189, 3);
+        padding: 3px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="loginForm">
+        <div class="form-group">
+          <h2><b>LOGIN DETAILS</b></h2>
+          <label>User Name: </label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="form-control"
+          /><br /><br />
+        </div>
+        <div class="form-group">
+          <label>Password :</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+          /><br /><br />
+          <button type="submit">Login</button><br /><br />
+        </div>
+      </form>
+      <div class="cont1">
+        don't have login id?<br />
+        <button class="register">
+          <a href="Registration.html">Register</a>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent the form from submitting normally
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          try {
+            const response = await fetch("http://localhost:5000/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ username, password }),
+            });
+            const data = await response.json();
+            console.log(data); // Log the response from the server
+            // Redirect to homepage if login is successful
+            if (response.ok) {
+              window.location.href = "/homepage.html";
+            } else {
+              alert(data.msg); // Display error message if login fails
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred, please try again later.");
+          }
+        });
+    </script>
+  </body>
+</html>
+
+<!-- 
+<?php
+// Database connection parameters
+$host = 'localhost'; // or IP address
+$dbname = 'mydatabase';
+$username = 'root';
+$password = '';
+
+// Create connection
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Retrieve user input
+$userName = $_POST['username'];
+$userPassword = $_POST['password'];
+
+// Prepare and bind
+$stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+$stmt->bind_param("ss", $userName, $userPassword);
+
+// Execute the query
+if ($stmt->execute()) {
+    echo "New records created successfully";
+} else {
+    echo "Error: " . $stmt->error;
+}
+
+// Close statement and connection
+$stmt->close();
+$conn->close();
+?> -->

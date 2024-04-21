@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+       
+
+        nav {
+            display: flex;
+            justify-content:center;
+            background-color: #3b0404;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration:double;
+            padding: 10px;
+            margin: 10px;
+        }
+        nav img{
+            justify-content:left;
+            height: 50px;
+            width: 50px;
+            
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .listing-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 11px rgba(0, 0, 0, 0.1);
+        }
+
+        .listing-item {
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+            margin: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .listing-item:last-child {
+            border-bottom: none;
+        }
+
+        .listing-item img {
+            max-width: 25%;
+            height: auto;
+            margin-right: 10px;
+            margin-left: 5px;
+        }
+
+        .listing-item .item-details {
+            flex-grow: 1;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        h1{
+            text-align: center;
+            font-family:serif;
+            outline-style: double;
+            outline-width: 20%;
+            text-shadow: 2px 2px;
+            border-width: 10px;
+        }
+        .btntn
+        {
+         color: #270404;
+         background-color: greenyellow;
+         object-position: 5%;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="image/logo.png">
+        <a href="homepage.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Services</a>
+        <a href="index.html">Login</a>
+        
+    </nav>
+    <h1><b>JT Realtors</b></h1>
+    <div class="listing-container">
+        <div class="listing-item">
+            <img src="image/excel.jpg" alt="Item Image">
+            <div class="item-details">
+                <h2>Excel Tower</h2>
+                <p>Locality in Powai.Immediate possesion.</p>
+            </div>
+            <span class="sp">45000/-</span><br><br>
+            <button class="btntn">View</button>
+        </div>
+
+        <div class="listing-item">
+            <img src="image/jd.jpg" alt="Item Image">
+            <div class="item-details">
+                <h2>Jheel Darshan CHS</h2>
+                <h3>2BHK</h3>
+                <p>Near to L&T Headquatres, Powai. Semi Furnished</p>
+            </div>
+            <span>50000/-</span>
+            <button class="btntn">View</button>
+        </div>
+        <div class="listing-item">
+            <img src="image/vv.jpg" alt="Item Image">
+            <div class="item-details">
+                <h2>Vijay Vihar</h2>
+                <h3>1BHK</h3>
+                <p>Decent Flat nearby Gopal Sharma Institution. Unfurnished</p>
+            </div>
+            <span>37000/-</span>
+            <button class="btntn">View</button>
+        </div>
+        <div class="listing-item">
+            <img src="image/exclusive.jpeg" alt="Item Image">
+            <div class="item-details">
+                <h2>Exclusive Chs Ltd</h2>
+                <h3>3BHK</h3>
+                <p>Best Flat for Male Customer who are in IBS and IIT Bombay</p>
+            </div>
+            <span>65000/- </span>
+            <button class="btntn">View</button>
+        </div>
+        
+
+</body>
+</html>
